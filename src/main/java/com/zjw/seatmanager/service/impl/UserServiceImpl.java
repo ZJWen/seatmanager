@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
        User user= userMapper.selectOne(new QueryWrapper<User>()
         .eq("username",username)
         );
-        System.out.println("测试测试")
+
        return user;
     }
 

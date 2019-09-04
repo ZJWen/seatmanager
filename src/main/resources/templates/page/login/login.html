@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
 	<title>登录--layui后台管理模板</title>
@@ -28,14 +28,27 @@
 				<input class="layui-input" name="password" placeholder="密码" lay-verify="required" type="password" autocomplete="off">
 		    </div>
 		    <div class="layui-form-item form_code">
-				<!--<input class="layui-input" name="code" placeholder="验证码" lay-verify="required" type="text" autocomplete="off">-->
+				<input class="layui-input" name="code" placeholder="验证码" lay-verify="required" type="text" autocomplete="off" style="width: 50%;display: inline;margin-right: 5px">
 				<!--<div class="code"><img src="/images/code.jpg" width="116" height="36"></div>-->
+
+					<a href="javascript:;" title="点击更换验证码">
+						<img id="imgVerify" src="/getVerify" alt="更换验证码" height="38px" width="45%" onclick="getVerify(this);">
+					</a>
 		    </div>
+			<label name="err" style="color:red;"></label>
 			<!--<button class="layui-btn login_btn" lay-submit="" lay-filter="login">登录</button>-->
 			<input class="layui-btn login_btn" type="submit" value="登录" />
 		</form>
 	</div>
+	<script>
+        function getVerify(obj){
+            obj.src ="/getVerify";
+
+        }
+	</script>
 	<script type="text/javascript" src="/layui/layui.js"></script>
 	<script type="text/javascript" src="/js/login.js"></script>
 </body>
+
+
 </html>
